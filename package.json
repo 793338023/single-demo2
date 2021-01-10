@@ -1,0 +1,18 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "app/*"
+  ],
+  "scripts": {
+    "clean": "lerna clean && rimraf node_modules",
+    "common-build": "yarn workspace common run build",
+    "components-build": "yarn workspace components run build",
+    "c-build": "yarn run common-build && yarn run components-build"
+  },
+  "devDependencies": {
+    "lerna": "^3.22.1",
+    "rimraf": "^3.0.2"
+  }
+}
